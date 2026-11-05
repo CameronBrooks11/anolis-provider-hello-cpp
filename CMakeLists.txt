@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(anolis_provider_template_cpp VERSION 0.1.0 LANGUAGES C CXX)
+project(anolis_provider_hello_cpp VERSION 0.1.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -18,13 +18,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(anolis_provider_sdk)
 
-add_executable(anolis-provider-template-cpp src/provider.cpp)
-target_link_libraries(anolis-provider-template-cpp PRIVATE anolis::provider_sdk anolis::provider_sdk_config)
-target_compile_definitions(anolis-provider-template-cpp PRIVATE ANOLIS_PROVIDER_VERSION="${PROJECT_VERSION}")
+add_executable(anolis-provider-hello-cpp src/provider.cpp)
+target_link_libraries(anolis-provider-hello-cpp PRIVATE anolis::provider_sdk anolis::provider_sdk_config)
+target_compile_definitions(anolis-provider-hello-cpp PRIVATE ANOLIS_PROVIDER_VERSION="${PROJECT_VERSION}")
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(anolis-provider-template-cpp PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(anolis-provider-hello-cpp PRIVATE -Wall -Wextra -Wpedantic)
     if(ANOLIS_PROVIDER_WARNINGS_AS_ERRORS)
-        target_compile_options(anolis-provider-template-cpp PRIVATE -Werror)
+        target_compile_options(anolis-provider-hello-cpp PRIVATE -Werror)
     endif()
 endif()
