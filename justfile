@@ -1,8 +1,8 @@
-# anolis-provider-template-cpp dev commands. CI runs build, test and fmt-check.
+# anolis-provider-hello-cpp dev commands. CI runs build, test and fmt-check.
 # Needs VCPKG_ROOT pointing at a vcpkg checkout, and python3 for the harness.
 
 harness_wheel := "https://github.com/anolishq/anolis-protocol/releases/download/v1.10.0/anolis_protocol-1.10.0-py3-none-any.whl"
-binary := "build/release/anolis-provider-template-cpp"
+binary := "build/release/anolis-provider-hello-cpp"
 
 # List available recipes
 default:

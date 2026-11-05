@@ -1,4 +1,4 @@
-// anolis-provider-template-cpp: simulated heaters, no hardware. Start here when
+// anolis-provider-hello-cpp: simulated heaters, no hardware. Start here when
 // writing a provider.
 //
 // Each configured device is a heater with a first-order thermal model: its
@@ -41,7 +41,7 @@ namespace adpp = anolis::deviceprovider::v1;
 
 namespace {
 
-constexpr const char* kName = "anolis-provider-template-cpp";
+constexpr const char* kName = "anolis-provider-hello-cpp";
 constexpr const char* kVersion = ANOLIS_PROVIDER_VERSION;  // from project(VERSION) in CMakeLists.txt
 constexpr double kTimeConstantS = 60.0;
 constexpr uint32_t kSetPower = 1;
@@ -63,7 +63,7 @@ const cfg::Schema& config_schema() {
             cfg::number_field("rated_w").exclusive_min_number(0.0).default_number(100.0).title("Power at full (W)"));
         cfg::Object root(cfg::Openness::Closed);
         root.array("devices", cfg::Array::of_objects(std::move(device)).min_items(1), cfg::Presence::Required);
-        return cfg::Schema(std::move(root)).title("anolis-provider-template-cpp config");
+        return cfg::Schema(std::move(root)).title("anolis-provider-hello-cpp config");
     }();
     return schema;
 }

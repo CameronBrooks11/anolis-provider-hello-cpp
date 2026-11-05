@@ -1,5 +1,5 @@
 {
-  "name": "anolis-provider-template-cpp",
+  "name": "anolis-provider-hello-cpp",
   "version": "0.1.0",
   "description": "Template for an Anolis device provider in C++",
   "dependencies": [
